@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+    <DefineConstants>TRACE;<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath></DefineConstants>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <PackageReference Include="Google.Apis.Sheets.v4" Version="1.49.0.2111" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="sheet_icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <PackageIcon>sheet_icon.png</PackageIcon>
+    <SignAssembly>false</SignAssembly>
+    <Authors>Tim van den Bosch</Authors>
+    <Company>Team Arid</Company>
+    <Description>A google sheet client that downloads datat from a Google Sheet database for the project Arid.</Description>
+    <ApplicationIcon>sheet_icon.ico</ApplicationIcon>
+    <StartupObject>GoogleSheetClient.Program</StartupObject>
+  </PropertyGroup>
+  
+
+</Project>
